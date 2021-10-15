@@ -1,6 +1,8 @@
 ## [CobaltStrike Update](https://blog.zygd.site/CobaltStrike%20Update.html)
 ![version](https://img.shields.io/badge/Version-4.4-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike)
 
+![image-20211015083754121](https://rmt.ladydaily.com/fetch/ZYGG/storage/image-20211015083754121.png)
+
 ## Introduce
 
 > Cobatstrike is a platform wide multi-party cooperative post penetration attack framework based on Java. Cobaltstrike integrates the functions of port forwarding, port scanning, socket proxy, lifting rights, fishing, remote control Trojan horse and so on. The tool covers almost all the technical links needed in the apt attack chain.
