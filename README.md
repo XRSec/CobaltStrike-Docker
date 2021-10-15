@@ -42,36 +42,6 @@ docker run -it \
 
 ![image-20210903211214909](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213224154378.png?w=1280&fmt=jpg)
 
-### Tree
-
-```ini
-Docker-CobaltStrike git:(master) ✗ tree
-.
-├── Dockerfile
-├── README.md
-├── cobaltstrike.server
-│   ├── agscript.sh
-│   ├── c2lint.sh
-│   ├── cobaltstrike
-│   ├── cobaltstrike.jar
-│   ├── cs.profile
-│   ├── dingding.cna
-│   ├── license.pdf
-│   ├── peclone.sh
-│   ├── teamserver
-│   ├── third-party
-│   │   ├── README.winvnc.txt
-│   │   ├── winvnc.x64.dll
-│   │   └── winvnc.x86.dll
-│   └── update.jar
-├── xaa
-├── xab
-├── xac
-└── xad
-
-2 directories, 19 files
-```
-
 ### MD5
 
 ```ini

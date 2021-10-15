@@ -61,25 +61,25 @@ fi
 	# -Djavax.net.ssl.keyStorePassword="password" to java. This is used for setting up
 	# an SSL server socket. Also, the SHA-1 digest of the first certificate in the store
 	# is printed so users may have a chance to verify they're not being owned.
-if [ -e /cobaltstrike/cobaltstrike.store ]; then
+if [ -e /c2/c2.store ]; then
 	print_info "Will use existing X509 certificate and keystore (for SSL)"
 else
 	print_info "Generating X509 certificate and keystore (for SSL)"
 	IFS_BACKUP=$IFS
 	IFS=$(echo -en "\n\b")
-	keytool -keystore /cobaltstrike/cobaltstrike.store -storepass $passwd -keypass $passwd -genkey -keyalg RSA -alias "$aliasname" -dname "$dname"
+	keytool -keystore /c2/c2.store -storepass $passwd -keypass $passwd -genkey -keyalg RSA -alias "$aliasname" -dname "$dname"
 	IFS=$IFS_BACKUP
 fi
 
 # start the team server.
-# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=50050 -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=123456 -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar server.TeamServer $*
+# java -XX:ParallelGCThreads=4 -Dc2.server_port=50050 -Djavax.net.ssl.keyStore=/c2/c2.store -Djavax.net.ssl.keyStorePassword=123456 -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /c2/c2.jar server.TeamServer $*
 
 
 # Cloud function
-# java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar:. -Duser.language=en server.TeamServer $server_ip $passwd /cobaltstrike/cs.profile
+# java -XX:ParallelGCThreads=4 -Dc2.server_port=$server_port -Djavax.net.ssl.keyStore=/c2/c2.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /c2/c2.jar:. -Duser.language=en server.TeamServer $server_ip $passwd /c2/cs.profile
 
-java -XX:ParallelGCThreads=4 -Dcobaltstrike.server_port=$server_port -Djavax.net.ssl.keyStore=/cobaltstrike/cobaltstrike.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /cobaltstrike/cobaltstrike.jar:. -Duser.language=en server.TeamServer $server_ip $passwd
+java -XX:ParallelGCThreads=4 -Dc2.server_port=$server_port -Djavax.net.ssl.keyStore=/c2/c2.store -Djavax.net.ssl.keyStorePassword=$passwd -server -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -classpath /c2/c2.jar:. -Duser.language=en server.TeamServer $server_ip $passwd
 
 # DingTalk
 # sleep 10 
-# java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -classpath /cobaltstrike/cobaltstrike.jar aggressor.headless.Start 127.0.0.1 $server_port Dingtalk $passwd /cobaltstrike/dingding.cna
+# java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -classpath /c2/c2.jar aggressor.headless.Start 127.0.0.1 $server_port Dingtalk $passwd /c2/dingding.cna
