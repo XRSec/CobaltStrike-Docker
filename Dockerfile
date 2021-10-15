@@ -2,12 +2,12 @@ FROM xrsec/java:latest
 LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 
-COPY c2.server /c2
-COPY Dockerfile /c2
+COPY cobaltstrike /cobaltstrike
+COPY Dockerfile /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses langpacks-zh_CN.noarch -y \
-    && chmod 777 /c2/teamserver
+    && chmod 777 /cobaltstrike/teamserver
 
 ENV server_ip 127.0.0.1
 ENV server_port 33009
@@ -19,4 +19,4 @@ ENV TZ Asia/Shanghai
 STOPSIGNAL SIGWINCH
 
 EXPOSE 50050 80 443 33009
-CMD ["/c2/teamserver"]
+CMD ["/cobaltstrike/teamserver"]

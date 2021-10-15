@@ -34,39 +34,11 @@ docker run -it \
 # -e "passwd=e9PrFYtrPFD2U" : your password
 ```
 
-
-
 ### Preview
 
 ![image-20210903211149434](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213218094679.png?w=1280&fmt=jpg)
 
 ![image-20210903211214909](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213224154378.png?w=1280&fmt=jpg)
-
-### MD5
-
-```ini
-➜  Docker-CobaltStrike git:(master) ✗ find ./ -type f -print0 | xargs -0 MD5
-MD5 ( Dockerfile ) = 6c6e328f75cc56c879dedaf9844759e0
-MD5 ( xaa ) = a76ce786568503d0ce05583ae23bc83b
-MD5 ( xab ) = be28f33114b33634e4400e95effe4fe1
-MD5 ( xac ) = 56823dd94fca7d115729f4f7d4987a67
-MD5 ( xad ) = 310062853ad10b944ac544b0c7d5125c
-MD5 ( cobaltstrike.server/dingding.cna ) = 7f29a0628cea4064a9c5e7fb024f961e
-MD5 ( cobaltstrike.server/cobaltstrike ) = 6cb0e504f022153da5a3600d747ae50e
-MD5 ( cobaltstrike.server/.DS_Store ) = a2557695c4fdd889d68d3ccec763aded
-MD5 ( cobaltstrike.server/update.jar ) = fc2a7eaf59a926790946a8ec8c2e7a92
-MD5 ( cobaltstrike.server/peclone.sh ) = 91aacf2ded132846e64d100b0efb1082
-MD5 ( cobaltstrike.server/agscript.sh ) = ac9308c56cf48012695ec52f990462c6
-MD5 ( cobaltstrike.server/teamserver ) = 0f13c1e3d24ce89af2b9b3babfc89756
-MD5 ( cobaltstrike.server/license.pdf ) = 3bf4b1c7be0a273cb631e7611f3078d8
-MD5 ( cobaltstrike.server/c2lint.sh ) = 63ce20f4ee0a8cb174ccd9c18b973ffa
-MD5 ( cobaltstrike.server/third-party/README.winvnc.txt ) = ce44456545c3f6695f017eeca535bc0d
-MD5 ( cobaltstrike.server/third-party/winvnc.x64.dll ) = e51265f5926c76fb23cd271a602201d2
-MD5 ( cobaltstrike.server/third-party/winvnc.x86.dll ) = 0b29b836626c477639e23f59b18a4945
-MD5 ( cobaltstrike.server/cobaltstrike.jar ) = c253bb692f4bef85741ee5709267dded
-MD5 ( cobaltstrike.server/cs.profile ) = 33c5dae3d3aa6559b8674167e8cd538a
-➜  Docker-CobaltStrike git:(master) ✗
-```
 
 ## Thanks
 

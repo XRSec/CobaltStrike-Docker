@@ -1,3 +1,0 @@
-source ~/.zshrc
-
-java -javaagent:/Applications/CobaltStrike.app/Contents/MacOS/c2cn.jar -Xdock:icon=/Applications/CobaltStrike.app/Contents/Resources/ApplicationStub.icns -Dfile.encoding=utf-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -jar /Applications/CobaltStrike.app/Contents/MacOS/c2.jar
