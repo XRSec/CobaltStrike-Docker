@@ -1,5 +1,5 @@
 ## [CobaltStrike Update](https://blog.zygd.site/CobaltStrike%20Update.html)
-![version](https://img.shields.io/badge/Version-4.4-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike) [![CobaltStrike Build](https://github.com/XRSec/Docker-CobaltStrike/actions/workflows/CobaltStrike-Docker.yml/badge.svg)](https://github.com/XRSec/Docker-CobaltStrike/actions/workflows/CobaltStrike-Docker.yml)
+![version](https://img.shields.io/badge/Version-4.4-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike)
 
 ## Introduce
 
