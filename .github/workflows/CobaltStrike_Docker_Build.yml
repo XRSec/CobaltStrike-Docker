@@ -16,8 +16,8 @@ jobs:
       - 
         name: CobaltStrike Copy File
         run: |
-          docker run -it --name test --rm xrsec/cobaltstrike:4.4
-          docker cp test:/cobaltstrike .
+          mdkir cobaltstrike
+          docker run -it -d -v ./cobaltstrike:/cobaltstrike --rm xrsec/cobaltstrike:4.4
       - 
         name: Docker Setup Buildx
         uses: docker/setup-buildx-action@v1.6.0
