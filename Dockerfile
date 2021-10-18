@@ -2,10 +2,10 @@ FROM xrsec/java:latest
 LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 
-ADD cobaltstrike.zip /
+ADD cobaltstrike.zip /cobaltstrike
 COPY Dockerfile /cobaltstrike
 
-RUN yum update -y && yum upgrade -y \
+RUN ls / && ls cobaltstrike && yum update -y && yum upgrade -y \
     && yum install sudo ncurses langpacks-zh_CN.noarch -y \
     && chmod 777 /cobaltstrike/teamserver
 
