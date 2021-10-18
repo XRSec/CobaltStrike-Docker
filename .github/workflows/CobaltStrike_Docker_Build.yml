@@ -13,7 +13,7 @@ jobs:
       - 
         name: CobaltStrike Copy File
         run: |
-          docker run -it --name test --rm xrsec/cobaltstrike:4.4 bash
+          docker run -it --name test --rm xrsec/cobaltstrike:4.4
           docker cp test:/cobaltstrike .
       - 
         name: Docker Setup QEMU
