@@ -2,7 +2,7 @@ FROM xrsec/java:latest
 LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 
-COPY cobaltstrike /cobaltstrike
+ADD cobaltstrike.zip /cobaltstrike
 COPY Dockerfile /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
