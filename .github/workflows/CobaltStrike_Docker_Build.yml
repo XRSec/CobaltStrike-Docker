@@ -65,6 +65,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
-          repository: XRSec/AWVS14-Update
+          repository: XRSec/CobaltStrike-Update
           event-type: CobaltStrike_Update_Action
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
