@@ -54,7 +54,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: xrsec/cobaltstrike
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike
           
   Repository_Dispatch:
     needs: CobaltStrike_Docker_Build
@@ -65,6 +65,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.TOKEN_GITHUB }}
-          repository: XRSec/CobaltStrike-Update
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/CobaltStrike-Update
           event-type: CobaltStrike_Update_Action
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
