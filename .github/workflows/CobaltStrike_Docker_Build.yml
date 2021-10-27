@@ -18,7 +18,7 @@ jobs:
         name: Docker Setup Buildx
         uses: docker/setup-buildx-action@v1.6.0
       - 
-        name: unzip
+        name: Unzip Resources
         run: |
           unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' cobaltstrike.zip -d /tmp
           unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /tmp/cobaltstrike.zip -d .
