@@ -26,13 +26,13 @@ jobs:
           wget https://raw.githubusercontent.com/XRSec/CobaltStrike-Update/main/cs.profile -O cobaltstrike/cs.profile
           rm -rf /tmp/cobaltstrike.zip
           rm -rf cobaltstrike.zip
-#       - 
-#         name: Docker Login in Aliyun
-#         uses: docker/login-action@v1.10.0
-#         with:
-#           registry: ${{ secrets.DOCKERHUB_REGISTRY }}
-#           username: ${{ secrets.DOCKERHUB_USERNAME2 }}
-#           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - 
+        name: Docker Login in Aliyun
+        uses: docker/login-action@v1.10.0
+        with:
+          registry: ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}
+          username: ${{ secrets.DOCKERHUB_ACCOUNT_ALIYUN }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD_ALIYUN }}
       - 
         name: Docker Login
         uses: docker/login-action@v1.10.0
@@ -46,12 +46,11 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-#           tags: |
-#             ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
-#             ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
-#             ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME3 }}/cobaltstrike:4.4
-#             ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME3 }}/cobaltstrike:latest
           tags: |
+            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
+            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
+            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/cobaltstrike:4.4
+            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/cobaltstrike:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
             ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4.cache
