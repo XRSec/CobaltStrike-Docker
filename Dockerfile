@@ -3,17 +3,14 @@ LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 LABEL Github="https://github.com/XRSec/Code-Server-Update"
 
-COPY cobaltstrike.zip /
+COPY cobaltstrike /
+COPY Dockerfile /cobaltstrike
+WORKDIR /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
-    && unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /cobaltstrike.zip -d /cobaltstrike \
-    && unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /cobaltstrike/cobaltstrike.zip -d /cobaltstrike \
-    && rm -rf /cobaltstrike/cobaltstrike.zip \
     && chmod 777 /cobaltstrike/teamserver
 
-COPY Dockerfile /cobaltstrike
-WORKDIR /cobaltstrike
 ENV server_ip 127.0.0.1
 ENV server_port 33009
 ENV aliasname "cloud.tencent.com"
