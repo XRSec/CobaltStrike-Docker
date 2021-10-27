@@ -8,8 +8,9 @@ COPY Dockerfile /cobaltstrike
 WORKDIR /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
-    && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
-    && yum groupinstall Fonts -y \
+#     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
+    && yum install ncurses -y \
+#     && yum groupinstall Fonts -y \
     && yum clean all -y \
     && chmod 777 /cobaltstrike/teamserver
 
