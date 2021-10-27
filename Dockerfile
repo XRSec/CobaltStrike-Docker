@@ -3,7 +3,7 @@ LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 LABEL Github="https://github.com/XRSec/Code-Server-Update"
 
-COPY cobaltstrike.tar.gz /
+COPY cobaltstrike.zip /
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses langpacks-zh_CN.noarch -y \
