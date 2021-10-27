@@ -9,7 +9,7 @@ WORKDIR /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
-    && yum groupinstall Fonts \
+    && yum groupinstall Fonts -y \
     && yum clean all -y \
     && chmod 777 /cobaltstrike/teamserver
 
