@@ -1,7 +1,8 @@
 name: CobaltStrike Docker Build
 
-on: 
-  push
+on:
+  watch:
+    types: [started]
 
 jobs:
   CobaltStrike_Docker_Build:
@@ -47,21 +48,21 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
-            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
-            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/cobaltstrike:4.4
-            ${{ secrets.DOCKERHUB_REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/cobaltstrike:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
-            ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4.cache
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4.cache,mode=max
+            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
+            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache,mode=max
       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike
+          repository: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}
           
   Repository_Dispatch:
     needs: CobaltStrike_Docker_Build
