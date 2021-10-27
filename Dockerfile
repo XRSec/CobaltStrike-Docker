@@ -9,6 +9,8 @@ WORKDIR /cobaltstrike
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
+    && yum groupinstall Fonts \
+    && yum clean all -y \
     && chmod 777 /cobaltstrike/teamserver
 
 ENV server_ip 127.0.0.1
