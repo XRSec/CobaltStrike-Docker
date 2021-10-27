@@ -1,8 +1,7 @@
 name: CobaltStrike Docker Build
 
 on: 
-  watch:
-    types: [started]
+  push
 
 jobs:
   CobaltStrike_Docker_Build:
