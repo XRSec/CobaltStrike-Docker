@@ -21,7 +21,7 @@ jobs:
         name: unzip
         run: |
           unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' cobaltstrike.zip -d /tmp
-          unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /tmp/cobaltstrike.zip -d cobaltstrike
+          unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /tmp/cobaltstrike.zip -d .
           rm -rf /tmp/cobaltstrike.zip
           rm -rf cobaltstrike.zip
 #       - 
