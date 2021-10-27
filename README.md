@@ -28,6 +28,7 @@ docker run -it \
    -p 80:80 \
    -p 33009:33009 \
    -p 33009:33009/udp \
+   --restart=always \
    xrsec/cobaltstrike:4.4
    
 # "tips server_ip=192.168.0.1" | "tips server_ip=86.66.66.66"
@@ -39,6 +40,11 @@ docker run -it \
 
 ### Clinet
 ```bash
+mkdir CobaltStrike && cd CobaltStrike
+docker cp cs:/cobaltstrike/cobaltstrike.jar .
+docker cp cs:/cobaltstrike/hook.jar .
+wget https://raw.githubusercontent.com/XRSec/CobaltStrike-Update/main/cobaltstrikecn.jar
+
 java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -javaagent:hook.jar -javaagent:cobaltstrikecn.jar -jar cobaltstrike.jar
 ```
 
