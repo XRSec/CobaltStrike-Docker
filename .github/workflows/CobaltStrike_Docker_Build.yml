@@ -45,8 +45,8 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4
             ${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4.cache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/cobaltstrike:4.4.cache,mode=max
       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
