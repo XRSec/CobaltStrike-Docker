@@ -5,7 +5,7 @@ LABEL Github="https://github.com/XRSec/Code-Server-Update"
 
 COPY cobaltstrike /
 COPY Dockerfile /cobaltstrike
-WORKDIR /cobaltstrike
+WORKDIR /cobaltstrike/
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
