@@ -12,6 +12,7 @@
 
 ## Quickly create
 
+### Server
 > If you want to use cloud functions, you must use port 443 inside the container
 
 ```bash
@@ -36,6 +37,11 @@ docker run -it \
 # -e "passwd=e9PrFYtrPFD2U" : your password
 ```
 
+### Clinet
+```bash
+java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -javaagent:hook.jar -javaagent:cobaltstrikecn.jar -jar cobaltstrike.jar
+```
+
 ### Preview
 
 ![image-20210903211149434](https://rmt.ladydaily.com/fetch/ZYGG/storage/20210903213218094679.png?w=1280&fmt=jpg)
@@ -44,7 +50,8 @@ docker run -it \
 
 ## Thanks
 
-https://www.upload.ee/files/13456591/Cobalt_Strike_4.4__August_04__2021_.7z.html
+* [@doocs](https://www.upload.ee/files/13456591/Cobalt_Strike_4.4__August_04__2021_.7z.html)
+* [JUICY00000](https://github.com/JUICY00000/Cobalt4.4)   <- **The current version** ->
 
 > Note: if you think that there are some backdoors in this crack patch or those who reprint or delete the copyright, please do not use it!
 > Any direct or indirect consequences and losses caused by the dissemination and use of the information provided in this article shall be borne by the user himself, and the author of the article shall not bear any responsibility for this.
