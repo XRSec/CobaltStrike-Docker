@@ -22,6 +22,7 @@ jobs:
         run: |
           unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' cobaltstrike.zip -d /tmp
           unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /tmp/cobaltstrike.zip -d .
+          wget https://raw.githubusercontent.com/XRSec/CobaltStrike-Update/main/dingding.cna -O cobaltstrike/dingding.cna
           rm -rf /tmp/cobaltstrike.zip
           rm -rf cobaltstrike.zip
 #       - 
