@@ -7,8 +7,8 @@ COPY cobaltstrike.zip /
 
 RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
-    && unzip -P'${{ secrets.DOCKERHUB_REGISTRY }}' /cobaltstrike.zip -d /cobaltstrike \
-    && unzip -P'${{ secrets.DOCKERHUB_REGISTRY }}' /cobaltstrike/cobaltstrike.zip -d /cobaltstrike \
+    && unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /cobaltstrike.zip -d /cobaltstrike \
+    && unzip -P'${{ secrets.PRESSURIZED_PASSWORD }}' /cobaltstrike/cobaltstrike.zip -d /cobaltstrike \
     && rm -rf /cobaltstrike/cobaltstrike.zip \
     && chmod 777 /cobaltstrike/teamserver
 
