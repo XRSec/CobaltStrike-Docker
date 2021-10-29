@@ -19,4 +19,4 @@ jobs:
           token: ${{ secrets.TOKEN_GITHUB }}
           repository: ${{ github.repository }}
           retain_days: ${{ github.event.inputs.days }}
-          keep_minimum_runs: 5
+          keep_minimum_runs: 3
