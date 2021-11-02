@@ -40,6 +40,22 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+#       - 
+#         name: Build and push Docker images
+#         uses: docker/build-push-action@v2.7.0
+#         with:
+#           context: .
+#           platforms: linux/amd64,linux/arm64
+#           push: true
+#           tags: |
+#             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+#             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
+#             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+#             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:latest
+#             ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
+#             ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
+#           cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache
+#           cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache,mode=max
       - 
         name: Build and push Docker images
         uses: docker/build-push-action@v2.7.0
@@ -48,14 +64,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
-            ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:4.4
             ${{ secrets.DOCKERHUB_REGISTRY_ALIYUN }}/${{ secrets.DOCKERHUB_USERNAME_ALIYUN }}/${{ secrets.DOCKERHUB_REPO }}:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPO }}:4.4.cache,mode=max
       - 
         name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
