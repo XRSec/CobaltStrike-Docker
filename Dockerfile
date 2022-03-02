@@ -2,12 +2,14 @@ FROM xrsec/java:latest
 LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
 LABEL Github="https://github.com/XRSec/Code-Server-Update"
+LABEL org.opencontainers.image.source="https://github.com/Code-Server-Update"
+LABEL org.opencontainers.image.title="Code-Server-Update"
 
 COPY cobaltstrike /cobaltstrike
 COPY Dockerfile /cobaltstrike
 WORKDIR /cobaltstrike
 
-RUN yum clean all && yum makecache && yum update -y && yum upgrade -y \
+RUN yum update -y && yum upgrade -y \
     && yum install sudo ncurses unzip langpacks-zh_CN.noarch -y \
     && yum groupinstall Fonts -y \
     && yum clean all -y \
