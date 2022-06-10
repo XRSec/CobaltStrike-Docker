@@ -31,7 +31,7 @@ docker run -it \
    -p 33009:33009 \
    -p 33009:33009/udp \
    --restart=always \
-   xrsec/cobaltstrike:4.4
+   xrsec/cobaltstrike:latest
 
 # "tips server_ip=192.168.0.1" | "tips server_ip=86.66.66.66"
 # -p 80:80 : http
