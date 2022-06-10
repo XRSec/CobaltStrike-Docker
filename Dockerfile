@@ -1,9 +1,9 @@
 FROM xrsec/java:latest
 LABEL maintainer="xrsec"
 LABEL mail="troy@zygd.site"
-LABEL Github="https://github.com/XRSec/Code-Server-Update"
-LABEL org.opencontainers.image.source="https://github.com/Code-Server-Update"
-LABEL org.opencontainers.image.title="Code-Server-Update"
+LABEL Github="https://github.com/XRSec/CobaltStrike-Update"
+LABEL org.opencontainers.image.source="https://github.com/XRSec/CobaltStrike-Update"
+LABEL org.opencontainers.image.title="CobaltStrike"
 
 COPY cobaltstrike /cobaltstrike
 COPY Dockerfile /cobaltstrike

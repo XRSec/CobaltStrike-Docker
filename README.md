@@ -1,5 +1,5 @@
 ## [CobaltStrike Update](https://cobaltstrike.vercel.app/)
-![version](https://img.shields.io/badge/Version-4.4-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike) [![CobaltStrike Update](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml/badge.svg)](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml)
+![version](https://img.shields.io/badge/Version-4.5-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike) [![CobaltStrike Update](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml/badge.svg)](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml)
 
 ![image-20211015083754121](https://rmt.ladydaily.com/fetch/ZYGG/storage/image-20211015083754121.png)
 
@@ -43,10 +43,12 @@ docker run -it \
 ```bash
 mkdir CobaltStrike && cd CobaltStrike
 docker cp cs:/cobaltstrike/cobaltstrike.jar .
-docker cp cs:/cobaltstrike/hook.jar .
+docker cp cs:/cobaltstrike/CSAgent.jar .
 wget https://raw.githubusercontent.com/XRSec/CobaltStrike-Update/main/cobaltstrikecn.jar
 
-java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -javaagent:hook.jar -javaagent:cobaltstrikecn.jar -jar cobaltstrike.jar
+APPDIR="/home/hello/cobaltstrike"
+java -javaagent:$APPDIR/cobaltstrikecn.jar -javaagent:$APPDIR/CSAgent.jar=f38eb3d1a335b252b58bc2acde81b542 -Dfile.encoding=UTF-8 -XX:ParallelGCThreads=4  -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xmx1024M -jar $APPDIR/cobaltstrike.jar
+# macOS `-Xdock:icon=$APPDIR/cobaltstrike.icns`
 ```
 
 ### Preview
@@ -57,8 +59,7 @@ java -XX:ParallelGCThreads=4 -XX:+AggressiveHeap -XX:+UseParallelGC -Xms512M -Xm
 
 ## Thanks
 
-* [@doocs](https://www.upload.ee/files/13456591/Cobalt_Strike_4.4__August_04__2021_.7z.html)
-* [JUICY00000](https://github.com/JUICY00000/Cobalt4.4)   <- **The current version** ->
+[@doocs](https://www.upload.ee/files/13456591/Cobalt_Strike_4.4__August_04__2021_.7z.html) [JUICY00000](https://github.com/JUICY00000/Cobalt4.4) [anonymous](https://www.123pan.com/s/l1eA-iqdD3)
 
 > Note: if you think that there are some backdoors in this crack patch or those who reprint or delete the copyright, please do not use it!
 > Any direct or indirect consequences and losses caused by the dissemination and use of the information provided in this article shall be borne by the user himself, and the author of the article shall not bear any responsibility for this.
