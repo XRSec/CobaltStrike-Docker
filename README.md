@@ -1,6 +1,6 @@
 ## [CobaltStrike Update](https://cobaltstrike.vercel.app/)
 
-![version](https://img.shields.io/badge/Version-4.5-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike) [![CobaltStrike Update](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml/badge.svg)](https://github.com/XRSec/CobaltStrike-Update/actions/workflows/CobaltStrike_Docker_Build.yml)
+![version](https://img.shields.io/badge/Version-4.5-da282a) [![Docker Automated Build](https://img.shields.io/docker/automated/xrsec/cobaltstrike?label=Build&logo=docker&style=flat-square)](https://hub.docker.com/r/xrsec/cobaltstrike) [![CobaltStrike Docker Build](https://github.com/XRSec/CobaltStrike-Docker/actions/workflows/CobaltStrike_Docker_Build.yml/badge.svg)](https://github.com/XRSec/CobaltStrike-Docker/actions/workflows/CobaltStrike_Docker_Build.yml)
 
 ![image-20211015083754121](https://dogefs.s3.ladydaily.com/ZYGG/storage/image-20211015083754121.png?fmt=webp&q=48)
 
